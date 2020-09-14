@@ -43,3 +43,14 @@ For this project I went with the default unit testing approach since I have many
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Validation decisions
+
+The best way to validate an email address is to send an Email to the user. However for this FE only project, email validation for our clients should at least contain a fully formed domain. Angulars native email validator allows for such addresses like:
+ 
+ -  john@doe
+ 
+ In this case, we want to mimic web sites like Twitter or FedEx's own email validations that require the full address like
+ 
+ - john@doe.com
+ 
+ To achieve this I had to go with a custom validator with a regEx
