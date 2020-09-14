@@ -1,0 +1,112 @@
+<div
+  fxFlex
+  fxLayoutAlign="center center"
+>
+  <mat-card
+    fxFlex.xs="100"
+    fxFlex.sm="100"
+    fxFlex.md="30"
+    fxFlex.lg="30"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    @enter-item
+  >
+    <form
+      [formGroup]="signupForm"
+      ngxsForm="signupFormStore.form"
+      (ngSubmit)="onSubmit()"
+    >
+    <mat-card-header>
+      <mat-card-title>
+        Create your account
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content
+      fxLayout="column"
+      fxLayoutGap="16px"
+     >
+        <mat-form-field>
+          <mat-label>
+            Name
+          </mat-label>
+          <input
+            matInput
+            formControlName="firstName"
+            required
+          >
+          <mat-error>
+            + Name is required...
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Last Name
+          </mat-label>
+          <input
+            matInput
+            formControlName="lastName"
+            required
+          >
+          <mat-error>
+            + Last Name is required...
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Email
+          </mat-label>
+          <input
+            matInput
+            formControlName="email"
+            type="email"
+            name="email"
+            email
+            [errorStateMatcher]="matcher"
+            required
+          >
+          <mat-error>
+            + A valid Email is required...
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Password
+          </mat-label>
+          <input
+            matInput
+            formControlName="password"
+            type="password"
+            name="password"
+            autocomplete="on"
+            [errorStateMatcher]="matcher"
+            required
+          >
+            <mat-error *ngIf="password.hasError('required')">
+              + Password is required...
+            </mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">
+              + Your password must be a minimum of {{ passwordMinLength }} characters...
+            </mat-error>
+            <mat-error *ngIf="password.hasError('lowerUppercase')">
+              + Your password must contain lower and uppercase letters...
+            </mat-error>
+            <mat-error *ngIf="password.hasError('firstOrLastNameInPassword')">
+              + Your password can't contain your first or last name...
+            </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="end end">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!signupForm.valid || (isLoading$ | async)"
+        >
+          Signup!
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
+
+

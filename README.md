@@ -1,27 +1,43 @@
 # FedEx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Angular 10 project built by Lucas Frecia for a jot test.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After cloning, install with npm, run the production local server, and run it to see tha app running
+
+```sh
+$ npm i
+$ npm run start:prod
+```
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+### Plugins
+
+Some of the libs included that make for a better user and developer experience are:
+
+| Plugin | README |
+| ------ | ------ |
+| @ngxs/store | https://ngxs.gitbook.io/ngxs/ |
+| @angular/flex-layout | https://github.com/angular/flex-layout |
+| @angular/material | https://material.angular.io/guides |
+
+### Why @ngxs state management?
+
+Using a state management library would really not be necessary for a small project. However, using such a library shows I can use this approach.
+
+### Testing
+
+For this project I went with the default unit testing approach since I have many other projects that use Cypress for e2e testing.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

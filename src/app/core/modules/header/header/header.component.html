@@ -1,0 +1,24 @@
+<div class="sticky">
+  <mat-toolbar
+    color="primary"
+    fxFlex
+    fxLayoutAlign="center center"
+  >
+      <img
+        @left-to-right-enter
+        src="./assets/logo.png"
+        height="25"
+        alt="weather-central logo with name"
+        [routerLink]="['/']"
+        fxLayoutAlign="center center"
+      >
+  </mat-toolbar>
+</div>
+
+<ng-container *ngIf="isLoading$ | async">
+  <mat-progress-bar
+    color="primary"
+    mode="indeterminate"
+  >
+  </mat-progress-bar>
+</ng-container>
