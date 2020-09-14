@@ -80,7 +80,7 @@ export class SignupFormStoreState {
   public sendSignupForm(
     context: StateContext<SignupStateModel>,
     action: SendSignupFormAction
-  ): any { // Observable<>
+  ): Observable<SignUpItemModel> {
 
     const state = context.getState();
     const payload = state.form.model;
