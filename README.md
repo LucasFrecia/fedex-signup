@@ -35,6 +35,10 @@ Some of the libs included that make for a better user and developer experience a
 
 Using a state management library would really not be necessary for a small project. However, using such a library shows I can use this approach.
 
+## Why @angular/flex-layout?
+
+This library makes it easy to have a responsive site, and eliminates styles boiler.
+
 ### Testing
 
 For this project I went with the default unit testing approach since I have many other projects that use Cypress for e2e testing.
