@@ -2,10 +2,6 @@
 
 Angular 10 project built by Lucas Frecia for a jot test.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 ### Installation
 
 After cloning, install with npm, run the production local server, and run it to see tha app running
@@ -14,6 +10,12 @@ After cloning, install with npm, run the production local server, and run it to 
 $ npm i
 $ npm run start:prod
 ```
+
+Then navigate to http://localhost:4200/
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. If you have redux tools in your browser you will be able to see the working store.
 
 ## Build
 
